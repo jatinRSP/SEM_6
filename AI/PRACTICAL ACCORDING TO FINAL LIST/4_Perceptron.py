@@ -1,0 +1,29 @@
+def ActivationFunction(y_in):
+    if y_in > 0:
+        return 1
+    else:
+        return -1
+
+x1 = [1,1,-1,-1]
+x2 = [1,-1,1,-1]
+t = [1,-1,-1,-1]
+
+def perceptron(x1, x2, learning_rate=1, epochs=2):
+    w1 = 0
+    w2 = 0
+    b = 0
+
+    for epoch in range(epochs):
+        for i in range(len(x1)):
+            y_in = x1[i]*w1 + x2[i]*w2 + b
+            y = ActivationFunction(y_in)
+
+            if y != t[i]:
+                w1 = w1 + learning_rate*t[i]*x1[i]
+                w2 = w2 + learning_rate*t[i]*x2[i]
+                b = b + learning_rate*t[i]
+
+    return w1, w2, b
+
+weights = perceptron(x1, x2)
+print(weights)
