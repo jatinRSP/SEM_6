@@ -1,6 +1,7 @@
 import numpy as np
 
 n = int(input("Enter number of nodes: "))
+print
 
 # crate n * n array with all 0
 
@@ -9,7 +10,7 @@ graph = np.zeros((n, n), dtype=int)
 # create edges
 
 for i in range(n):
-    print(f"Enter neighbors of node {i} (space separated): ")
+    print(f"Enter neighbors of node {i} (space separated): ", end="")
     neighbors = list(map(int, input().split()))
     for neighbor in neighbors:
         graph[i][neighbor] = 1
@@ -19,16 +20,19 @@ for i in range(n):
     
 print("Graph:")
 print(graph)
+print()
 
 # dfs bfs
 
 choice = input("Enter 'dfs' or 'bfs': ")
+print()
 
 openL = []
 closeL = []
 
 startNode = int(input("Enter start node: "))
 targetNode = int(input("Enter target node: "))
+print()
 
 openL.append(startNode)
 
@@ -55,3 +59,6 @@ while openL:
     print("open: ", openL)
     print("close: ", closeL)
     print("-----------------------------------------------")
+
+else:
+    print("No path found") 
