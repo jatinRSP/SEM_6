@@ -1,6 +1,8 @@
 m = int(input("Enter capacity of first jug: "))
 n = int(input("Enter capacity of second jug: "))
 d = int(input("Enter desired amount: "))
+print()
+
 
 startState = (0,0)
 targetState = [(d,0),(0,d)]
@@ -40,8 +42,9 @@ def bfs():
 
     openL.append(startState)
 
-    print("open: ", openL)
+    print("open:  ", openL)
     print("close: ", closeL)
+    print("-----------------------------------------------")
     
 
     while openL:
@@ -58,6 +61,7 @@ def bfs():
                 openL.append(nextState)
                 print("open:  ", openL)
                 print("close: ", closeL)
+                print("-----------------------------------------------")
 
     else:
         print("Path not found!")
