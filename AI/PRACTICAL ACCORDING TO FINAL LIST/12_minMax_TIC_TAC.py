@@ -1,5 +1,7 @@
 import numpy as np
 
+# Human 'X' and AI 'O'
+
 # Function to print the Tic-Tac-Toe board
 def print_board(board):
     print("\n")
@@ -72,7 +74,7 @@ def main():
         print_board(board)
 
         if check_win(board, 'X'):
-            print("Opponent wins!")
+            print("Human wins!")
             break
         elif check_tie(board):
             print("It's a tie!")
@@ -82,7 +84,7 @@ def main():
         print_board(board)
 
         if check_win(board, 'O'):
-            print("You win!")
+            print("AI win!")
             break
         elif check_tie(board):
             print("It's a tie!")

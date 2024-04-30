@@ -1,8 +1,31 @@
-def ActivationFunction(y_in):
+def ActivationFunction(y_in): # Step Function
     if y_in > 0:
         return 1
     else:
         return -1
+    
+# Other activation function equation
+# def ActivationFunction(y_in): # Sigmoid Function
+#     return 1/(1 + math.exp(-y_in))
+
+# def ActivationFunction(y_in): # Tanh Function
+#     return (math.exp(y_in) - math.exp(-y_in))/(math.exp(y_in) + math.exp(-y_in))
+
+# def ActivationFunction(y_in): # ReLU Function
+#     if y_in > 0:
+#         return y_in
+#     else:
+#         return 0
+
+# def ActivationFunction(y_in): # Leaky ReLU Function
+#     if y_in > 0:
+#         return y_in
+#     else:
+#         return 0.01*y_in
+
+# def ActivationFunction(y_in): # Softmax Function
+#     return math.exp(y_in)/sum(math.exp(y_in))
+
 
 x1 = [1,1,-1,-1]
 x2 = [1,-1,1,-1]
