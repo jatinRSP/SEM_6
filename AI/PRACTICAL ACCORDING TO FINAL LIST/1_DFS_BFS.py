@@ -1,7 +1,7 @@
 import numpy as np
 
 n = int(input("Enter number of nodes: "))
-print
+print()
 
 # crate n * n array with all 0
 
