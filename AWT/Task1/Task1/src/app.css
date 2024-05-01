@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Aptos;
+    display: grid;
+    place-items: center;
+}
+
+.linkwrapper{
+    width: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.linkwrapper a{
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    background-color: #4f200e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.linkwrapper a img{
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}

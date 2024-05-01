@@ -1,0 +1,13 @@
+.todo-container {
+  width: 200px;
+  padding: 10px;
+}
+
+.todo-header {
+  align-items: center;
+}
+
+.todo-header h1 {
+  display: flex;
+  justify-content: center;
+}
