@@ -30,9 +30,9 @@ def check_tie(board):
 
 # Minimax algorithm implementation for AI opponent
 def minimax(board, player):
-    if check_win(board, 'X'): return [-1, -1]
-    elif check_win(board, 'O'): return [-1, 1]
-    elif check_tie(board): return [-1, 0]
+    if check_win(board, 'X'): return [-1, -1]  # Human wins
+    elif check_win(board, 'O'): return [-1, 1] # AI wins
+    elif check_tie(board): return [-1, 0]     # Tie
 
     best = [-1, -1000 if player == 'O' else 1000]
 
@@ -44,6 +44,8 @@ def minimax(board, player):
 
             score[0] = cell
             if player == 'O':
+
+                
                 if score[1] > best[1]: best = score
             else:
                 if score[1] < best[1]: best = score
