@@ -20,6 +20,23 @@
 //     return y;
 // }
 
+int extendedEuclidean(int a, int b)
+{
+    int t1 = 0, t2 = 1, q, r, t;
+    while (b != 0)
+    {
+        q = a / b;
+        r = a % b;
+        t = t1 - t2 * q;
+        t1 = t2;
+        t2 = t;
+        a = b;
+        b = r;
+    }
+
+    return a != 1 ? 0 : t1;
+}
+
 int fastExponentiation(int a, int b, int n)
 {
     int bitCount = (int)ceil(log2(b)); // Cast log2 result to int
@@ -88,7 +105,9 @@ void main()
 
     printf("\nThe cipher text is: %d %d \n", c1, c2);
 
-    dec_m = c2 * fastExponentiation(c1, p - 1 - x, p) % p;
+    int c1inv = extendedEuclidean(p, (fastExponentiation(c1, x, p) % p));
+
+    dec_m = (c2 * c1inv) % p;
 
     printf("\nThe decrypted message is: %d \n", dec_m);
 }
